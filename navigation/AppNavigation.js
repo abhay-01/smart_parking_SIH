@@ -13,7 +13,7 @@ export default function AppNavigation() {
                 headerShown: false
             }}/>
             <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
-                headerShown: true
+                headerShown: false
             }}/>
         </Stack.Navigator>
     </NavigationContainer>
