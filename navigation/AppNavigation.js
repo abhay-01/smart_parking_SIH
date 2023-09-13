@@ -9,8 +9,10 @@ import { useState } from 'react';
 import { getData } from '../utils/AsyncStrorage';
 import BookingDetailScreen from '../screens/BookingDetailScreen';
 import ParkingFilter from '../screens/ParkingFilter';
+import Account from '../screens/Account';
+import MyProfile from '../screens/MyProfile';
 
-const  Stack = createStackNavigator();
+const Stack = createStackNavigator();
 export default function AppNavigation() {
     // const[showOnboard, setOnboard] = useState(null);
 
@@ -34,67 +36,95 @@ export default function AppNavigation() {
     // if(showOnboard == null){
     //     return null;
     // }
-  
+
 
     // if(showOnboard){
-        return(
-            <NavigationContainer>
-        <Stack.Navigator initialRouteName='Onboarding' >
-            <Stack.Screen name="Onboarding" component={OnboardingScreen} options = {{
-                headerShown: false
-            }}/>
-            <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
-                headerShown: false
-            }}/>
+    return (
+        <NavigationContainer>
+            <Stack.Navigator initialRouteName='Onboarding' >
+                <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{
+                    headerShown: false
+                }} />
+                <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
+                    headerShown: false
+                }} />
 
-<Stack.Screen name="History" component={History} options={{
-                headerShown: true,
-                title: 'My Bookings',
-                headerTintColor:'black',
-                headerTitleStyle:{
-                    fontWeight:'bold',
-                    fontSize: 20,
-                },
-                headerBackground: () => (
-                    <View style={{backgroundColor: 'orange', flex: 1}}/>
-                )
-                
-                
-            }}/>
-             <Stack.Screen name="BookingDetailScreen" component={BookingDetailScreen} options={{
-                headerShown: true,
-                title: 'Booking Details',
-                headerTintColor:'black',
-                headerTitleStyle:{
-                    fontWeight:'bold',
-                    fontSize: 20,
-                },
-                headerBackground: () => (
-                    <View style={{backgroundColor: 'orange', flex: 1}}/>
-                )
-                
-                
-            }}/>
-
-<Stack.Screen name="ParkingFilter" component={ParkingFilter} options={{
-                 headerShown: true,
-                 title: 'Parking Filter',
-                 headerTintColor:'black',
-                 headerTitleStyle:{
-                     fontWeight:'bold',
-                     fontSize: 20,
-                 },
-                 headerBackground: () => (
-                     <View style={{backgroundColor: 'orange', flex: 1}}/>
-                 )
-                 
-             }}/>
+                <Stack.Screen name="History" component={History} options={{
+                    headerShown: true,
+                    title: 'My Bookings',
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                    },
+                    headerBackground: () => (
+                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
+                    )
 
 
+                }} />
+                <Stack.Screen name="BookingDetailScreen" component={BookingDetailScreen} options={{
+                    headerShown: true,
+                    title: 'Booking Details',
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                    },
+                    headerBackground: () => (
+                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
+                    )
 
-        </Stack.Navigator>
-    </NavigationContainer>
-        )
+
+                }} />
+
+                <Stack.Screen name="ParkingFilter" component={ParkingFilter} options={{
+                    headerShown: true,
+                    title: 'Parking Filter',
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                    },
+                    headerBackground: () => (
+                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
+                    )
+
+                }} />
+
+<Stack.Screen name="MyProfile" component={MyProfile} options={{
+                    headerShown: true,
+                    title: 'My Profile',
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                    },
+                    headerBackground: () => (
+                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
+                    )
+
+                }} />
+
+<Stack.Screen name="Account" component={Account} options={{
+                    headerShown: true,
+                    title: 'Account',
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                    },
+                    headerBackground: () => (
+                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
+                    )
+
+                }} />
+
+
+
+            </Stack.Navigator>
+        </NavigationContainer>
+    )
     // }else{
     //     <NavigationContainer>
     //     <Stack.Navigator initialRouteName='HomeScreen'>
@@ -107,5 +137,5 @@ export default function AppNavigation() {
     //     </Stack.Navigator>
     // </NavigationContainer>
     // }
-    
+
 }

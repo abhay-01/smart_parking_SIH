@@ -4,7 +4,7 @@ import { View, Text } from 'react-native'
 export default function EVspots() {
   return (
     <View>
-        <Text>EVspots</Text>
+        <Text>Espots</Text>
     </View>
   )
 }

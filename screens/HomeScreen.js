@@ -22,6 +22,14 @@ export default function HomeScreen() {
             <TouchableOpacity onPress={() => navigation.navigate('ParkingFilter')}>
                 <Text>Go to Parking filter</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity onPress={() => navigation.navigate('Account')}>
+                <Text>Go to Profile Section</Text>
+            </TouchableOpacity>
+
+
+
+
             
            
 
