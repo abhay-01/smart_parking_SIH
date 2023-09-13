@@ -35,7 +35,7 @@ export default function AppNavigation() {
     // if(showOnboard){
         return(
             <NavigationContainer>
-        <Stack.Navigator initialRouteName='Onboarding'>
+        <Stack.Navigator initialRouteName='Onboarding' >
             <Stack.Screen name="Onboarding" component={OnboardingScreen} options = {{
                 headerShown: false
             }}/>
