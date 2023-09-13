@@ -14,7 +14,9 @@ export default class BottomNavigator extends Component {
     return (
         <Tab.Navigator>
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Map" component={History} />
+        <Tab.Screen name="Map" component={History} options={{
+          title:'My Bookings'
+        }}/>
         <Tab.Screen name="Hist" component={Account} />
 
         <Tab.Screen name="Acc" component={EVspots} />
