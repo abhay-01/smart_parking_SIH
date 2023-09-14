@@ -13,6 +13,8 @@ import Account from '../screens/Account';
 import MyProfile from '../screens/MyProfile';
 import PaymentMethod from '../screens/PaymentMethod';
 import BottomTab from './BottomTab';
+import EVspots from '../screens/EVspots';
+import ParkingBooking from '../screens/ParkingBooking';
 
 const Stack = createStackNavigator();
 export default function AppNavigation({setOnboardingComplete}) {
@@ -139,12 +141,35 @@ export default function AppNavigation({setOnboardingComplete}) {
 
                 }} />
 
-                <Stack.Screen name = "BottomTab" component = {BottomTab} options = {{
-                    headerShown: false
-                }}/>
+<Stack.Screen name="EVspots" component={EVspots} options={{
+                    headerShown: true,
+                    title: 'EV Charging Spots',
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                    },
+                    headerBackground: () => (
+                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
+                    )
 
+                }} />
 
+<Stack.Screen name="ParkingBooking" component={ParkingBooking} options={{
+                    headerShown: true,
+                    title: 'Book you Slot',
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                    },
+                    headerBackground: () => (
+                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
+                    )
 
+                }} />
+
+               
             </Stack.Navigator>
                
             

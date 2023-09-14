@@ -3,6 +3,8 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome'; // Import your preferred icon library
 
+
+
 const CustomBottom = () => {
   const navigation = useNavigation();
 
@@ -14,42 +16,42 @@ const CustomBottom = () => {
     <View style={styles.tabBarContainer}>
       <TouchableOpacity
         style={styles.tabBarItem}
-        onPress={() => navigateToScreen('Screen1')}
+        onPress={() => navigateToScreen('HomeScreen')}
       >
         <Icon name="circle" size={24} color="blue" />
-        <Text style={styles.tabBarText}>Tab 1</Text>
+        <Text style={styles.tabBarText}>Home</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.tabBarItem}
-        onPress={() => navigateToScreen('Screen2')}
+        onPress={() => navigateToScreen('EVspots')}
       >
         <Icon name="circle" size={24} color="blue" />
-        <Text style={styles.tabBarText}>Tab 2</Text>
+        <Text style={styles.tabBarText}>EV</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.tabBarItem}
-        onPress={() => navigateToScreen('Screen3')}
+        onPress={() => navigateToScreen('ParkingBooking')}
       >
         <Icon name="circle" size={24} color="blue" />
-        <Text style={styles.tabBarText}>Tab 3</Text>
+        <Text style={styles.tabBarText}>Parking</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.tabBarItem}
-        onPress={() => navigateToScreen('Screen4')}
+        onPress={() => navigateToScreen('History')}
       >
         <Icon name="circle" size={24} color="blue" />
-        <Text style={styles.tabBarText}>Tab 4</Text>
+        <Text style={styles.tabBarText}>History</Text>
       </TouchableOpacity>
 
       <TouchableOpacity
         style={styles.tabBarItem}
-        onPress={() => navigateToScreen('Screen5')}
+        onPress={() => navigateToScreen('Account')}
       >
         <Icon name="circle" size={24} color="blue" />
-        <Text style={styles.tabBarText}>Tab 5</Text>
+        <Text style={styles.tabBarText}>Account</Text>
       </TouchableOpacity>
     </View>
   );
