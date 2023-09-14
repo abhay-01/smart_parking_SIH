@@ -4,7 +4,7 @@ import OnboardingScreen from '../screens/Onboarding';
 import HomeScreen from '../screens/HomeScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import History from '../screens/History';
-import { View } from 'react-native';
+import { View} from 'react-native';
 import { useState } from 'react';
 import { getData } from '../utils/AsyncStrorage';
 import BookingDetailScreen from '../screens/BookingDetailScreen';
@@ -45,6 +45,7 @@ export default function AppNavigation({setOnboardingComplete}) {
 
     // if(showOnboard){
     return (
+
         <NavigationContainer>
            
                     <Stack.Navigator initialRouteName='Onboarding'>
@@ -52,8 +53,8 @@ export default function AppNavigation({setOnboardingComplete}) {
                     headerShown: false
                 }} />
                 <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
-                    headerShown: false
-                }} />
+                    headerShown : false
+                }}/>
 
                 <Stack.Screen name="History" component={History} options={{
                     headerShown: true,

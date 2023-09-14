@@ -13,6 +13,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import AboutDialog from '../components/AboutDialog';
 import VehiclesDialog from '../components/VehiclesDialog';
+import CustomBottom from '../components/CustomBottom';
 
 
 
@@ -41,6 +42,8 @@ const Account = () => {
 const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.container}>
+    
+    
 
       <View style={styles.userInfoSection}>
         <View style={{ flexDirection: 'row', marginTop: 15 }}>
@@ -130,12 +133,22 @@ const navigation = useNavigation();
         <AboutDialog isVisible={isAboutDialogVisible} onClose={() => setAboutDialogVisible(false)} />
 
         <TouchableRipple onPress={() => { }}>
+          <View style={styles.menuItem} >
+            <Icon name="logout" color='#F79802'size={25} />
+            <Text style={styles.menuItemText}>Log Out</Text>
+          </View>
+        </TouchableRipple>
+
+        <TouchableRipple onPress={() => { }}>
           <View style={styles.menuItem}>
             <Icon name="logout" color='#F79802'size={25} />
             <Text style={styles.menuItemText}>Log Out</Text>
           </View>
         </TouchableRipple>
       </View>
+
+      <CustomBottom/>
+
     </SafeAreaView>
   );
 };
@@ -177,7 +190,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   menuWrapper: {
-    marginTop: 10,
+    marginTop: 2,
   },
   menuItem: {
     flexDirection: 'row',

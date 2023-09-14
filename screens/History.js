@@ -15,7 +15,7 @@ export default function History() {
       <TouchableOpacity
         style={[styles.tab, activeTab === 'Active' && styles.activeTab]}
         onPress={() => setActiveTab('Active')}
-        className = 'pl-3'
+        // className = 'pl-3'
       >
         <Text style={[styles.tabText, activeTab === 'Active' && styles.activeTabText]} >Active</Text>
       </TouchableOpacity>
@@ -71,6 +71,7 @@ tab: {
 activeTab: {
   backgroundColor: 'orange',
   borderColor: 'black',
+  marginLeft:7,
 },
 activeTabText: {
   fontSize: 18, // Increase the font size for the active tab
