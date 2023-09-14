@@ -5,6 +5,7 @@ import CustomBottom from '../components/CustomBottom';
 import { StatusBar } from 'expo-status-bar';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
+
 const { height } = Dimensions.get('window');
 
 export default function HomeScreen() {
@@ -195,7 +196,6 @@ const styles = StyleSheet.create({
         padding: 16,
         marginBottom: 16,
         backgroundColor: '#FFE5B4',
-
         width: '90%',
         height: '27%',
         marginLeft: 'auto',
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
         shadowColor: 'orange',
         shadowOffset: { width: 72, height: 48 },
         shadowOpacity: 0.5,
-        // shadowRadius: 5,
+        shadowRadius: 5,
         elevation: 5,
     }
 });
