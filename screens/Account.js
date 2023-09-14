@@ -10,10 +10,33 @@ import {
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
+import AboutDialog from '../components/AboutDialog';
+import VehiclesDialog from '../components/VehiclesDialog';
+
+
+
 
 
 
 const Account = () => {
+  const [isAboutDialogVisible, setAboutDialogVisible] = useState(false);
+  const [isVehiclesDialogVisible, setVehiclesDialogVisible] = useState(false);
+
+
+  const dummyVehicles = [
+    {
+      name: 'Car 1',
+      type: 'Sedan',
+      license: 'ABC123',
+    },
+    {
+      name: 'Motorcycle 1',
+      type: 'Motorcycle',
+      license: 'XYZ456',
+    },
+  ];
+
 
 const navigation = useNavigation();
   return (
@@ -71,30 +94,40 @@ const navigation = useNavigation();
             <Text style={styles.menuItemText}>Profile</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => { }}>
+        <TouchableRipple onPress={() => navigation.navigate('PaymentMethod')}>
           <View style={styles.menuItem}>
             <Icon name="credit-card" color='#F79802' size={25} />
             <Text style={styles.menuItemText}>Payment Methods</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple>
+        <TouchableRipple onPress={() => setVehiclesDialogVisible(true)}>
           <View style={styles.menuItem}>
             <Icon name="car-back" color='#F79802' size={25} />
             <Text style={styles.menuItemText}>My Vehicles</Text>
           </View>
         </TouchableRipple>
+
+        <VehiclesDialog
+        isVisible={isVehiclesDialogVisible}
+        vehicles={dummyVehicles} // Pass the dummy vehicle data
+        onClose={() => setVehiclesDialogVisible(false)}
+      />
+
+
         <TouchableRipple onPress={() => { }}>
           <View style={styles.menuItem}>
             <Icon name="sale" color='#F79802' size={25} />
-            <Text style={styles.menuItemText}>Help</Text>
+            <Text style={styles.menuItemText}>Promo Code</Text>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => { }}>
+        <TouchableRipple onPress={() => setAboutDialogVisible(true)}>
           <View style={styles.menuItem}>
             <Icon name="information" color='#F79802'size={25} />
             <Text style={styles.menuItemText}>About</Text>
           </View>
         </TouchableRipple>
+
+        <AboutDialog isVisible={isAboutDialogVisible} onClose={() => setAboutDialogVisible(false)} />
 
         <TouchableRipple onPress={() => { }}>
           <View style={styles.menuItem}>

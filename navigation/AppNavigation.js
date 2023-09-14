@@ -11,6 +11,7 @@ import BookingDetailScreen from '../screens/BookingDetailScreen';
 import ParkingFilter from '../screens/ParkingFilter';
 import Account from '../screens/Account';
 import MyProfile from '../screens/MyProfile';
+import PaymentMethod from '../screens/PaymentMethod';
 
 const Stack = createStackNavigator();
 export default function AppNavigation() {
@@ -109,6 +110,21 @@ export default function AppNavigation() {
 <Stack.Screen name="Account" component={Account} options={{
                     headerShown: true,
                     title: 'Account',
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                    },
+                    headerBackground: () => (
+                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
+                    )
+
+                }} />
+
+
+<Stack.Screen name="PaymentMethod" component={PaymentMethod} options={{
+                    headerShown: true,
+                    title: 'My Cards',
                     headerTintColor: 'black',
                     headerTitleStyle: {
                         fontWeight: 'bold',
