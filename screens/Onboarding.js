@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, Image } from 'react-native'
 import { StyleSheet } from 'react-native'
 import Onboarding from 'react-native-onboarding-swiper';
+import { useState } from 'react';
 import LottieView from 'lottie-react-native';
 import { Dimensions } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -13,7 +14,12 @@ const { width, height } = Dimensions.get('window');
 export default function OnboardingScreen() {
 
     const navigation = useNavigation();
+    const[onboardingComplete, setOnboardingComplete] = useState(false); // [1
     const handleDone = () => {
+
+        onboardingComplete ? navigation.navigate('HomeScreen') : 
+        setOnboardingComplete(true);
+
         navigation.navigate('HomeScreen');
     }
 
@@ -47,8 +53,8 @@ export default function OnboardingScreen() {
 
                             </View>
                         ),
-                        title: 'Onboarding',
-                        subtitle: 'Done with React Native Onboarding Swiper',
+                        title: 'Effortless Parking',
+                        subtitle: 'Your hassle-free solution for stress-free parking',
                     },
 
                     {
@@ -58,8 +64,8 @@ export default function OnboardingScreen() {
                                 <LottieView source={require('../assets/animations/animation_2.json')} autoPlay loop />
                             </View>
                         ),
-                        title: 'Onboarding',
-                        subtitle: 'Done with React Native Onboarding Swiper',
+                        title: 'Find Your Spot, Anytime, Anywhere',
+                        subtitle: 'Discover and reserve parking spaces on the go',
                     },
                     {
                         backgroundColor: '#ff7f50',
@@ -68,8 +74,8 @@ export default function OnboardingScreen() {
                                 <LottieView source={require('../assets/animations/animation_3.json')} autoPlay loop />
                             </View>
                         ),
-                        title: 'Onboarding',
-                        subtitle: 'Done with React Native Onboarding Swiper',
+                        title: 'Smarter Parking, Smoother Journey',
+                        subtitle: 'Streamline your commute with our intelligent parking app',
                     },
 
                 ]}

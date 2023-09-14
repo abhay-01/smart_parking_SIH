@@ -12,9 +12,11 @@ import ParkingFilter from '../screens/ParkingFilter';
 import Account from '../screens/Account';
 import MyProfile from '../screens/MyProfile';
 import PaymentMethod from '../screens/PaymentMethod';
+import BottomTab from './BottomTab';
 
 const Stack = createStackNavigator();
-export default function AppNavigation() {
+export default function AppNavigation({setOnboardingComplete}) {
+
     // const[showOnboard, setOnboard] = useState(null);
 
     // useEffect(() => {
@@ -37,12 +39,13 @@ export default function AppNavigation() {
     // if(showOnboard == null){
     //     return null;
     // }
-
+    
 
     // if(showOnboard){
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName='Onboarding' >
+           
+                    <Stack.Navigator initialRouteName='Onboarding'>
                 <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{
                     headerShown: false
                 }} />
@@ -93,7 +96,7 @@ export default function AppNavigation() {
 
                 }} />
 
-<Stack.Screen name="MyProfile" component={MyProfile} options={{
+                <Stack.Screen name="MyProfile" component={MyProfile} options={{
                     headerShown: true,
                     title: 'My Profile',
                     headerTintColor: 'black',
@@ -107,7 +110,7 @@ export default function AppNavigation() {
 
                 }} />
 
-<Stack.Screen name="Account" component={Account} options={{
+                <Stack.Screen name="Account" component={Account} options={{
                     headerShown: true,
                     title: 'Account',
                     headerTintColor: 'black',
@@ -122,7 +125,7 @@ export default function AppNavigation() {
                 }} />
 
 
-<Stack.Screen name="PaymentMethod" component={PaymentMethod} options={{
+                <Stack.Screen name="PaymentMethod" component={PaymentMethod} options={{
                     headerShown: true,
                     title: 'My Cards',
                     headerTintColor: 'black',
@@ -136,9 +139,16 @@ export default function AppNavigation() {
 
                 }} />
 
+                <Stack.Screen name = "BottomTab" component = {BottomTab} options = {{
+                    headerShown: false
+                }}/>
+
 
 
             </Stack.Navigator>
+               
+            
+            {/* <BottomTab/> */}
         </NavigationContainer>
     )
     // }else{

@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import ActiveBookingsScreen from './ActiveBookingsScreen';
 import UpcomingBookingsScreen from './UpcomingBookingsScreen';
 import PastBookingsScreen from './PastBookingsScreen';
+import CustomBottom from '../components/CustomBottom';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 export default function History() {
@@ -14,8 +15,9 @@ export default function History() {
       <TouchableOpacity
         style={[styles.tab, activeTab === 'Active' && styles.activeTab]}
         onPress={() => setActiveTab('Active')}
+        className = 'pl-3'
       >
-        <Text style={[styles.tabText, activeTab === 'Active' && styles.activeTabText]}>Active</Text>
+        <Text style={[styles.tabText, activeTab === 'Active' && styles.activeTabText]} >Active</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={[styles.tab, activeTab === 'Upcoming' && styles.activeTab]}
@@ -31,18 +33,24 @@ export default function History() {
       </TouchableOpacity>
     </View>
 
+
     {/* Content for the selected tab */}
     {activeTab === 'Active' && <ActiveBookingsScreen />}
     {activeTab === 'Upcoming' && <UpcomingBookingsScreen />}
     {activeTab === 'Past' && <PastBookingsScreen />}
+
+
+    <CustomBottom/>
   </View>
+  
 );
 }
 
 const styles = StyleSheet.create({
 container: {
   flex: 1,
-  padding: 10,
+  paddingTop:10,
+  // padding: 10,
 },
 tabContainer: {
   flexDirection: 'row',

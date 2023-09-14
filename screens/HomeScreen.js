@@ -3,6 +3,7 @@ import { View, Text, Touchable } from 'react-native'
 import { StyleSheet } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import CustomBottom from '../components/CustomBottom';
 
 
  
@@ -27,13 +28,8 @@ export default function HomeScreen() {
                 <Text>Go to Profile Section</Text>
             </TouchableOpacity>
 
-
-
-
-            
-           
-
-        </View>
+            <CustomBottom/>
+                    </View>
 
     
     );

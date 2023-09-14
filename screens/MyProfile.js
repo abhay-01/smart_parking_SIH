@@ -66,7 +66,7 @@ export default function MyProfile() {
       </View>
 
       <View className=" flex-row m-3 w-100" style={styles.box}>
-        <Icon name="email-fast" color='#F79802' size={29} marginLeft={25} marginRight={25} marginTop={16} />
+        <Icon name="car-info" color='#F79802' size={29} marginLeft={25} marginRight={25} marginTop={16} />
         <View>
           <View>
             <Text style={{ fontSize: 20, fontWeight: 'bold', marginTop: 16, marginBottom: 5 }}>Vehcile Number</Text>
