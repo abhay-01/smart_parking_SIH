@@ -11,7 +11,7 @@ import { View, Text, ScrollView, StyleSheet } from 'react-native';
         <View style={styles.bookingDetail}>
           <Text className = "text-2xl ">Place: {booking.place}</Text>
           <Text className = "text-2xl ">Date: {booking.date}</Text>
-          <Text className = "text-2xl ">Fee: {booking.fees}</Text>
+          <Text className = "text-2xl ">Charges: {booking.charges}</Text>
           <Text>Time Slot: {booking.timeSlot}</Text>
           {/* Add more booking details here */}
         </View>

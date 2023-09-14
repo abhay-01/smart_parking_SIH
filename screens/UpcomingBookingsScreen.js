@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Alert,ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 
 export default function UpcomingBookingsScreen() {
@@ -60,13 +60,23 @@ export default function UpcomingBookingsScreen() {
   };
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}
+    showsVerticalScrollIndicator={false}
+    >
       {upcomingBookings.map((booking) => (
         <View key={booking.id} style={styles.bookingCard}>
-          <Text style={styles.bookingTitle}>{booking.place}</Text>
-          <Text>{booking.date}</Text>
+          <View style={styles.header}>
+            <Text style={styles.bookingTitle}>{booking.place}</Text>
+            <TouchableOpacity
+              style={styles.mapPinIcon}
+              onPress={() => navigation.navigate('BookingDetailScreen', booking)}
+            >
+              <Icon name="map-pin" size={24} color={'red'} />
+            </TouchableOpacity>
+          </View>
+          <Text style={styles.date}>{booking.date}</Text>
           <Text style={styles.charges}>Charges: {booking.fees}</Text>
-          <Text>{booking.timeSlot}</Text>
+          <Text style={styles.timeSlot}>{booking.timeSlot}</Text>
           <TouchableOpacity
             style={styles.cancelButton}
             onPress={() => handleCancelBooking(booking.id)}
@@ -75,32 +85,45 @@ export default function UpcomingBookingsScreen() {
           </TouchableOpacity>
         </View>
       ))}
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        padding: 10,
-      },
-      bookingCard: {
-        borderWidth: 1,
-        borderColor: '#ccc',
-        borderRadius: 5,
-        padding: 10,
-        marginBottom: 10,
-      },
-      bookingTitle: {
-        fontSize: 22,
-        fontWeight: 'bold',
-      },
-      charges: {
-        fontSize: 16,
-        color: 'blue', // Customize the fees text color
-        fontWeight: 'bold', // Make the fees text bold
-      },
-     
+  container: {
+    flex: 1,
+    padding: 10,
+  },
+  bookingCard: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 16,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  bookingTitle: {
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  date: {
+    fontSize: 16,
+    color: '#777777',
+    marginTop: 8,
+  },
+  charges: {
+    fontSize: 18,
+    color: '#FF7F50',
+    fontWeight: 'bold',
+    marginTop: 8,
+  },
+  timeSlot: {
+    fontSize: 16,
+    marginTop: 8,
+  },
   cancelButton: {
     backgroundColor: 'red',
     paddingHorizontal: 10,
@@ -109,11 +132,15 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginTop: -70,
     marginBottom: 30,
-
   },
   cancelButtonText: {
     color: 'white',
     fontWeight: 'bold',
-    fontSize:20
+    fontSize: 20,
+  },
+  mapPinIcon: {
+    marginLeft: 'auto',
+    marginTop: -26,
+    marginRight: 26,
   },
 });

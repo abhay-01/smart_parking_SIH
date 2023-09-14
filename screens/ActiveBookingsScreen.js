@@ -1,7 +1,8 @@
 import React, {useState,useEffect} from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableWithoutFeedback, Touchable } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/Feather'; // Import the Feather icon set
+import { useNavigation } from '@react-navigation/native';
 
 
 
@@ -9,6 +10,7 @@ import Icon from 'react-native-vector-icons/Feather'; // Import the Feather icon
 
 export default function ActiveBookingsScreen() {
 
+  const navigation = useNavigation();
 
   const [timers, setTimers] = useState({});
 
@@ -83,19 +85,37 @@ export default function ActiveBookingsScreen() {
       charges: '$15',
       timeSlot: '11:30 AM - 01:30 PM',
     },
-  ];
 
+    {
+      place: 'Parking Lot B',
+      date: '2023-09-16',
+      charges: '$12',
+      timeSlot: '02:00 PM - 04:00 PM',
+    },
+    {
+      place: 'Parking Lot C',
+      date: '2023-09-17',
+      charges: '$15',
+      timeSlot: '11:30 AM - 01:30 PM',
+    },
+  ];
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container}
+    showsVerticalScrollIndicator={false} 
+    >
       {activeBookings.map((booking, index) => (
         <View key={index} style={styles.bookingCard}>
-          <Text style={styles.bookingTitle}>{booking.place}</Text>
-          <Text>{booking.date}</Text>
+          <View style={styles.header}>
+            <Text style={styles.bookingTitle}>{booking.place}</Text>
+     <TouchableWithoutFeedback onPress={() => navigation.navigate('BookingDetailScreen', {booking})}>
+            <Icon name="map-pin" size={24} color={'red'} />
+            </TouchableWithoutFeedback>
+          
+          </View>
+          <Text style={styles.date}>{booking.date}</Text>
           <Text style={styles.charges}>Charges: {booking.charges}</Text>
-          <Text>{booking.timeSlot}</Text>
+          <Text style={styles.timeSlot}>{booking.timeSlot}</Text>
           <Text style={styles.timer}>{formatTimer(timers[booking.id])}</Text>
-          <Icon name="map-pin" size={24} color="red" style={styles.mapPinIcon} />
-
         </View>
       ))}
     </ScrollView>
@@ -105,36 +125,47 @@ export default function ActiveBookingsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 10,
+    padding: 12,
+    // backgroundColor: '#FFFFFF',
   },
   bookingCard: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    padding: 10,
-    marginBottom: 10,
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 16,
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   bookingTitle: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
+  },
+  date: {
+    fontSize: 16,
+    color: '#777777',
+    marginTop: 8,
   },
   charges: {
+    fontSize: 18,
+    color: '#FF7F50',
+    fontWeight: 'bold',
+    marginTop: 8,
+  },
+  timeSlot: {
     fontSize: 16,
-    color: 'blue', // Customize the fees text color
-    fontWeight: 'bold', // Make the fees text bold
+    marginTop: 8,
+
   },
   timer: {
-    fontSize: 26,
-    marginLeft: 'auto',
+    fontSize: 25,
     fontWeight: 'bold',
-    marginTop: -80,
-    marginBottom: 40,
-  },
-
-  mapPinIcon:{
+    paddingHorizontal: 10,
+    paddingVertical: 5,
     marginLeft: 'auto',
-    marginTop: -26,
-    marginRight:26,
-
-  }
+    marginTop: -70,
+    marginBottom: 30,
+  },
 });
