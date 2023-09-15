@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { useRoute } from '@react-navigation/native';
 import { useState } from 'react';
 import { RadioButton } from 'react-native-paper';
+import CustomBottom from '../components/CustomBottom';
 
 
 export default function PaymentScreen() {
@@ -34,7 +35,10 @@ export default function PaymentScreen() {
         <View style={{ flex: 1 }}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.headerInfo}>
-                    <Text>Parking near Stellar IT</Text>
+                    <Text styles = {{
+                        fontSize: 24,
+                        fontWeight: 'bold',
+                    }}>Parking near Stellar IT</Text>
                     <Text>
                         Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry.
@@ -137,20 +141,22 @@ export default function PaymentScreen() {
                     <View style={styles.Bottomcontainer}>
       <View style={styles.totalView}>
         <Text style={styles.totalText}>Grand Total</Text>
+        <Text className = 'text-3xl text-orange-500 font-bold'>Rs.599</Text>
       </View>
-      <View style={styles.proceedView}>
+      <TouchableOpacity style={styles.proceedView} >
         <Text style={styles.proceedText}>Proceed</Text>
-      </View>
+      </TouchableOpacity>
     </View>
                 </View>
             </ScrollView>
+            <CustomBottom/>
         </View>
     );
 }
 
 const styles = StyleSheet.create({
     headerInfo: {
-        backgroundColor: 'white',
+        backgroundColor: '#FFF7E7',
         flex: 1,
         padding: 16,
     },
@@ -161,6 +167,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 16,
         marginBottom: 25,
+        elevation: 5,
+
     },
 
     paymentBox: {
@@ -168,6 +176,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 16,
         marginBottom: 25,
+        elevation: 5,
+
     },
 
     paymentHead: {
@@ -179,8 +189,9 @@ const styles = StyleSheet.create({
 
     MainCont: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#FFF7E7',
         padding: 16,
+
     },
     durationTextContainer: {
         flexDirection: 'column',
@@ -192,6 +203,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 16,
         marginBottom: 25,
+        elevation: 5,
+
     },
 
     durationText: {
@@ -223,34 +236,41 @@ const styles = StyleSheet.create({
      
       Bottomcontainer: {
         flexDirection: 'row',
-        width: '100%',
-        position: 'absolute',
-        bottom: 0,
-        marginTop: 10,
-      },
-      totalView: {
-        flex: 1,
-        backgroundColor: 'orange', // Change to your app's theme color
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 50, // Adjust the height as needed
-        marginLeft: 10,
-      },
-      totalText: {
-        color: 'white', // Change to the text color you prefer
-        fontSize: 25, // Adjust the font size as needed
-        fontWeight: 'bold',
-      },
-      proceedView: {
-        flex: 1,
-        backgroundColor: 'blue', // Change to your app's theme color
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: 50, // Adjust the height as needed
-      },
-      proceedText: {
-        color: 'white', // Change to the text color you prefer
-        fontSize: 25, // Adjust the font size as needed
-        fontWeight: 'bold',
-      },
-    });
+        borderRadius: 20,
+    width: '100%',
+    backgroundColor: 'white', // Background color of the container
+    borderTopWidth: 1, // Optional: Add a border at the top of the container
+    borderColor: 'lightgray', // Optional: Border color
+    elevation: 5,
+
+  },
+  totalView: {
+    flex: 1,
+    borderTopLeftRadius: 20,
+    borderBottomLeftRadius: 20,
+    backgroundColor: '#FFE5B4', // Background color for "Grand Total"
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 90, // Adjust the height as needed
+  },
+  totalText: {
+    color: 'white', // Text color for "Grand Total"
+    fontSize: 27, // Font size for the text
+    // fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  proceedView: {
+    flex: 1,
+    backgroundColor: 'orange', // Background color for "Proceed"
+    alignItems: 'center',
+    borderTopRightRadius: 20,
+    borderBottomRightRadius: 20,
+    justifyContent: 'center',
+    height: 90, // Adjust the height as needed
+  },
+  proceedText: {
+    color: 'white', // Text color for "Proceed"
+    fontSize: 27,  // Font size for the text
+    fontWeight: 'bold',
+  },
+});

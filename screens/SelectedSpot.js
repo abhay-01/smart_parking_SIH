@@ -22,29 +22,29 @@ export default function SelectedSpot() {
     const [selectedTime, setSelectedTime] = useState(new Date());
     const [isLoading, setIsLoading] = useState(false);
     const [availabilityResults, setAvailabilityResults] = useState(null);
-  
+
     const toggleCheckAvailabilityModal = () => {
-      setIsCheckAvailabilityModalVisible(!isCheckAvailabilityModalVisible);
+        setIsCheckAvailabilityModalVisible(!isCheckAvailabilityModalVisible);
     };
-  
+
     const handleCheckAvailability = () => {
-      // Show loading indicator
-      setIsLoading(true);
-  
-      // Simulate loading for 3 seconds
-      setTimeout(() => {
-        // Replace with actual availability and pricing check
-        const results = {
-          availableSpaces: 50,
-          averagePricing: '$10/hour',
-        };
-        setAvailabilityResults(results);
-  
-        // Hide loading indicator
-        setIsLoading(false);
-      }, 3000);
+        // Show loading indicator
+        setIsLoading(true);
+
+        // Simulate loading for 3 seconds
+        setTimeout(() => {
+            // Replace with actual availability and pricing check
+            const results = {
+                availableSpaces: 50,
+                averagePricing: '$10/hour',
+            };
+            setAvailabilityResults(results);
+
+            // Hide loading indicator
+            setIsLoading(false);
+        }, 3000);
     };
-  
+
 
 
     return (
@@ -242,41 +242,41 @@ export default function SelectedSpot() {
 
                     {/* Check Availability Modal */}
                     <Modal
-        transparent={true}
-        animationType="slide"
-        visible={isCheckAvailabilityModalVisible}
-        onRequestClose={toggleCheckAvailabilityModal}
-      >
-        <View style={styles.modalContainer}>
-          {isLoading ? (
-            <View style={styles.loadingContainer}>
-              <ActivityIndicator size={34} color="orange" />
-              <Text className = 'text-white mb-3 text-2xl'>Checking...</Text>
-            </View>
-          ) : availabilityResults ? (
-            <View style={styles.resultsContainer}>
-              <Text className = 'text-white text-2xl'>Available Spaces: {availabilityResults.availableSpaces}</Text>
-              <Text className = 'text-white mb-3 text-2xl'>Average Pricing: {availabilityResults.averagePricing}</Text>
-            </View>
-          ) : (
-            <DateTimePicker
-              isVisible={true}
-              mode="datetime"
-              date={selectedDate}
-              onConfirm={(date) => setSelectedDate(date)}
-              onCancel={toggleCheckAvailabilityModal}
-            />
-          )}
-          {!isLoading && !availabilityResults && (
-            <Button title="Check" onPress={handleCheckAvailability} style = {{
-                marginBottom: 24,
-            }} />
-          )}
-          <Button title="Done" color="orange" onPress={toggleCheckAvailabilityModal} />
-        </View>
-      </Modal>
+                        transparent={true}
+                        animationType="slide"
+                        visible={isCheckAvailabilityModalVisible}
+                        onRequestClose={toggleCheckAvailabilityModal}
+                    >
+                        <View style={styles.modalContainer}>
+                            {isLoading ? (
+                                <View style={styles.loadingContainer}>
+                                    <ActivityIndicator size={34} color="orange" />
+                                    <Text className='text-white mb-3 text-2xl'>Checking...</Text>
+                                </View>
+                            ) : availabilityResults ? (
+                                <View style={styles.resultsContainer}>
+                                    <Text className='text-white text-2xl'>Available Spaces: {availabilityResults.availableSpaces}</Text>
+                                    <Text className='text-white mb-3 text-2xl'>Average Pricing: {availabilityResults.averagePricing}</Text>
+                                </View>
+                            ) : (
+                                <DateTimePicker
+                                    isVisible={true}
+                                    mode="datetime"
+                                    date={selectedDate}
+                                    onConfirm={(date) => setSelectedDate(date)}
+                                    onCancel={toggleCheckAvailabilityModal}
+                                />
+                            )}
+                            {!isLoading && !availabilityResults && (
+                                <Button title="Check" onPress={handleCheckAvailability} style={{
+                                    marginBottom: 24,
+                                }} />
+                            )}
+                            <Button title="Done" color="orange" onPress={toggleCheckAvailabilityModal} />
+                        </View>
+                    </Modal>
 
-      {/* <DateTimePicker
+                    {/* <DateTimePicker
         isVisible={isCheckAvailabilityModalVisible}
         mode="date"
         onConfirm={(date) => setSelectedDate(date)}
@@ -295,13 +295,10 @@ export default function SelectedSpot() {
                         <TouchableOpacity style={styles.reserveButton}>
                             <Text style={styles.buttonText}>Reserve</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.bookButton} onPress={() => navigation.navigate('PaymentScreen' , {selectedDate,selectedTime})}>
+                        <TouchableOpacity style={styles.bookButton} onPress={() => navigation.navigate('PaymentScreen', { selectedDate, selectedTime })}>
                             <Text style={styles.buttonText}>Book</Text>
                         </TouchableOpacity>
                     </View>
-
-
-
                 </View>
 
             </ScrollView>
@@ -317,11 +314,12 @@ export default function SelectedSpot() {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'white',
+        backgroundColor: '#FFF7E7',
     },
     imageBox: {
-        backgroundColor: 'white',
+        backgroundColor: '#FFF7E7',
         alignItems: 'center',
+
     },
 
     iconContainer: {
@@ -339,14 +337,17 @@ const styles = StyleSheet.create({
 
     Maincontainer: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#FFF7E7',
         padding: 16,
+
     },
     detailsContainer: {
         backgroundColor: '#FFE5B4',
         borderRadius: 10,
         padding: 16,
         marginBottom: 16,
+        elevation: 5,
+
     },
     parkingName: {
         fontSize: 24,
@@ -366,6 +367,8 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         padding: 16,
         marginBottom: 16,
+        elevation: 5,
+
     },
     facilitiesTitle: {
         fontSize: 20,
@@ -412,7 +415,8 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: 'rgba(0, 0, 0, 0.7)',
         paddingHorizontal: 20, // Add padding to the sides
-      },
+
+    },
     modalContent: {
         width: '80%',
         backgroundColor: 'white',
@@ -470,6 +474,6 @@ const styles = StyleSheet.create({
     },
     loadingIndicator: {
         marginTop: 16,
-      },
-      
-    });
+    },
+
+});

@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
 container: {
   flex: 1,
   paddingTop:10,
+  backgroundColor: '#FFF7E7',
   // padding: 10,
 },
 tabContainer: {

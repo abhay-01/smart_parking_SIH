@@ -158,6 +158,7 @@ export default Account;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#FFF7E7',
   },
   userInfoSection: {
     paddingHorizontal: 30,
