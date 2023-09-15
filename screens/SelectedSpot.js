@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Dimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { HeartIcon } from 'react-native-heroicons/solid';
 
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -42,10 +41,7 @@ export default function SelectedSpot() {
                     <View style={styles.iconContainer}>
                         <Icon name="arrow-left" size={25} color="black" margin={4} onPress={() => navigation.goBack()} />
                     </View>
-                    
-                    
-                       
-=                </View>
+                </View>
 
                 <View style={styles.ratings}>
                     <Icon name='star' size={19} color={'orange'} marginLeft={9} marginTop={5} />
