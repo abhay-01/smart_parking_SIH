@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { Dimensions } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { HeartIcon } from 'react-native-heroicons/solid';
+
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+
 import { useNavigation } from '@react-navigation/native';
 import CustomBottom from '../components/CustomBottom';
 
@@ -20,141 +23,220 @@ export default function SelectedSpot() {
 
 
     return (
-        <View styles = {{
-            flex:1,
+        <View styles={{
+            flex: 1,
         }}>
 
-        <ScrollView style={styles.container}
-            showsVerticalScrollIndicator
-        >
-            <View style={styles.imageBox}>
-                <Image
-                    source={require('../assets/parking.png')}
-                    style={{ width: windowWidth, height: windowHeight * 0.4, borderBottomLeftRadius: 22, borderBottomRightRadius: 22 }} // Adjust the height as a percentage of the screen height
-                    resizeMode="cover" // You can choose how the image fits within the view
-                />
 
-                <View style={styles.iconContainer}>
-                    <Icon name="arrow-left" size={25} color="black" margin={4} onPress={() => navigation.goBack()} />
-                </View>
-            </View>
+            <ScrollView style={styles.container}
+                showsVerticalScrollIndicator
+            >
 
-            <View style={styles.ratings}>
-                <Icon name='star' size={19} color={'orange'} marginLeft={9} marginTop={5} />
-                <Icon name='star' size={19} color={'orange'} marginLeft={9} marginTop={5} />
-                <Icon name='star' size={19} color={'orange'} marginLeft={9} marginTop={5} />
-                <Icon name='star' size={19} color={'orange'} marginLeft={9} marginTop={5} />
-                <Icon name='star' size={19} color={'gray'} marginLeft={9} marginTop={5} />
-                <Text className="ml-3 mt-1 font-bold">(1 Rating)</Text>
-                <Image source={require('../assets/selectPark.png')} style={{ width: 25, height: 25, marginLeft: 90, marginTop: 5, }}
-                />
+                <View style={styles.imageBox}>
+                    <Image
+                        source={require('../assets/parking.png')}
+                        style={{ width: windowWidth, height: windowHeight * 0.4, borderBottomLeftRadius: 22, borderBottomRightRadius: 22 }} // Adjust the height as a percentage of the screen height
+                        resizeMode="cover" // You can choose how the image fits within the view
+                    />
 
-                <Text style={{
-                    marginTop: 7,
-                    fontWeight: 'bold',
-                    color: 'gray',
-                }}>3 Times</Text>
-
-            </View>
-
-            <View style={styles.Maincontainer}>
-                {/* Parking Details Container */}
-                <View style={styles.detailsContainer}>
-                    <View style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                    }}>
-
-                        <Text style={styles.parkingName}>Parking Near Stellar IT</Text>
-                        <Icon name='map' size={33} marginTop={13} color={'orange'} />
-
+                    <View style={styles.iconContainer}>
+                        <Icon name="arrow-left" size={25} color="black" margin={4} onPress={() => navigation.goBack()} />
                     </View>
-                    {/* <View style={styles.borderLine}></View> */}
-                    <Text style={styles.details} className='mt-2 mb-3'>Short Description of the Parking</Text>
-                    <View style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                    }}>
+                    
+                    
+                       
+=                </View>
 
-                        <Text style={styles.details} className='font-bold mt-7'>Availability</Text>
-                        <Text className='mt-7 mr-2'>8:00 a.m -12:00 a.m</Text>
-                    </View>
-                    <View style={styles.borderLine}></View>
+                <View style={styles.ratings}>
+                    <Icon name='star' size={19} color={'orange'} marginLeft={9} marginTop={5} />
+                    <Icon name='star' size={19} color={'orange'} marginLeft={9} marginTop={5} />
+                    <Icon name='star' size={19} color={'orange'} marginLeft={9} marginTop={5} />
+                    <Icon name='star' size={19} color={'orange'} marginLeft={9} marginTop={5} />
+                    <Icon name='star' size={19} color={'gray'} marginLeft={9} marginTop={5} />
+                    <Text className="ml-3 mt-1 font-bold">(1 Rating)</Text>
+                    <Image source={require('../assets/selectPark.png')} style={{ width: 25, height: 25, marginLeft: 90, marginTop: 5, }}
+                    />
 
-                    <View style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                    }}>
-                        <Text style={styles.details} className='font-bold'>Peak Hours</Text>
-                        <Text className=' mr-2'>8:00 a.m -12:00 p.m</Text>
-
-                    </View>
-                    <View style={styles.borderLine}></View>
-
-                    <View style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                    }}>
-                        <Text style={styles.details} className='font-bold'>Total Spaces</Text>
-                        <Text className=' mr-2'>300</Text>
-
-                    </View>
-                    <View style={styles.borderLine}></View>
-
-                    <View style={{
-                        flexDirection: 'row',
-                        justifyContent: 'space-between',
-                    }}>
-                        <Text style={styles.details} className='font-bold'>Distance</Text>
-                        <Text className=' mr-2'>300m</Text>
-
-                    </View>
+                    <Text style={{
+                        marginTop: 7,
+                        fontWeight: 'bold',
+                        color: 'gray',
+                    }}>3 Times</Text>
 
                 </View>
 
-                {/* Special Facilities Container */}
-                <View style={styles.facilitiesContainer}>
-                    <Text style={styles.facilitiesTitle}>Special Facilities</Text>
-                    <View className = 'flex-row'>
-                    <Text style={styles.facilities}>- Covered Parking</Text>
-                    </View>
-                    <Text style={styles.facilities}>- Security Cameras</Text>
-                    <Text style={styles.facilities}>- EV Charging Stations</Text>
-                </View>
+                <View style={styles.Maincontainer}>
+                    {/* Parking Details Container */}
+                    <View style={styles.detailsContainer}>
+                        <View style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                        }}>
 
-                <View style={styles.facilitiesContainer} >
-                    <Text style={styles.facilitiesTitle}>Payment Options</Text>
-                    <View className = 'flex-row'>
-                    <Text style={styles.facilities}>- Covered Parking</Text>
-                    <Text style={styles.facilities}>- Security Cameras</Text>
-                    <Text style={styles.facilities}>- EV Charging Stations</Text>
-                    </View>
-                </View>
+                            <Text style={styles.parkingName}>Parking Near Stellar IT</Text>
+                            <Icon name='map' size={33} marginTop={13} color={'orange'} />
 
-                {/* Check Availability Button */}
-                <TouchableOpacity style={styles.button} className='mb-3'>
-                    <Text style={styles.buttonText} >Check Availability</Text>
-                </TouchableOpacity>
-
-                {/* Reserve and Book Buttons */}
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.reserveButton}>
-                        <Text style={styles.buttonText}>Reserve</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.bookButton}>
-                        <Text style={styles.buttonText}>Book</Text>
-                    </TouchableOpacity>
-                </View>
-
-               
-
-            </View>
-            
-        </ScrollView>
-        
-                    <CustomBottom />
-              
                         </View>
+                        {/* <View style={styles.borderLine}></View> */}
+                        <Text style={styles.details} className='mt-2 mb-3'>Short Description of the Parking</Text>
+                        <View style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                        }}>
+
+                            <Text style={styles.details} className='font-bold mt-7'>Availability</Text>
+                            <Text className='mt-7 mr-2'>8:00 a.m -12:00 a.m</Text>
+                        </View>
+                        <View style={styles.borderLine}></View>
+
+                        <View style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                        }}>
+                            <Text style={styles.details} className='font-bold'>Peak Hours</Text>
+                            <Text className=' mr-2'>8:00 a.m -12:00 p.m</Text>
+
+                        </View>
+                        <View style={styles.borderLine}></View>
+
+                        <View style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                        }}>
+                            <Text style={styles.details} className='font-bold'>Total Spaces</Text>
+                            <Text className=' mr-2'>300</Text>
+
+                        </View>
+                        <View style={styles.borderLine}></View>
+
+                        <View style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                        }}>
+                            <Text style={styles.details} className='font-bold'>Distance</Text>
+                            <Text className=' mr-2'>300m</Text>
+
+                        </View>
+
+                    </View>
+
+                    {/* Special Facilities Container */}
+                    <View style={styles.facilitiesContainer}>
+                        <Text style={styles.facilitiesTitle}>Special Facilities</Text>
+                        <View className='flex-row'>
+                            <Icon name='car' size={18} marginTop={7} marginRight={4} color={'orange'} />
+
+                            <Text style={styles.facilities} className='mt-1'>Covered Parking</Text>
+
+                        </View>
+
+
+                        <View className='flex-row'>
+                        <Image
+                                    source={require('../assets/cctv.png')}
+                                    style={{ width: 20, height: 20 }}
+                                    marginRight={4}
+                                    marginTop = {4}
+                                    tintColor={'orange'}
+                                    borderRadius={45}
+
+                                />
+                            <Text style={styles.facilities} className='mt-1'>24/7 Surveillance</Text>
+
+                        </View>
+
+                        <View className='flex-row'>
+                            <Icon name='flash' size={18} marginTop={7} marginRight={4} color={'orange'} />
+
+                            <Text style={styles.facilities} className='mt-1'>EV Charging Station</Text>
+
+                        </View>
+                    </View>
+
+                    <View style={styles.facilitiesContainer} >
+                        <Text style={styles.facilitiesTitle}>Payment Options</Text>
+                        <View className='flex-row mt-3'>
+                            <View className='flex-row'>
+                                <Image
+                                    source={require('../assets/card.png')}
+                                    style={{ width: 20, height: 20 }}
+                                    marginRight={4}
+                                    marginTop = {3}
+
+                                />
+
+                                <Text style={{
+                                    fontSize: 16,
+                                    marginRight:13
+
+                                }} className='mt-1'>Debit/Credit</Text>
+
+                            </View>
+                            <View className='flex-row'>
+                                <Image
+                                    source={require('../assets/tags.png')}
+                                    style={{ width: 20, height: 20 }}
+                                    marginRight={4}
+                                    marginTop = {4}
+
+                                />
+
+                                <Text style={{
+                                    fontSize: 16,
+                                    marginRight:13
+
+
+                                }} className='mt-1'>FastTags</Text>
+
+                            </View>
+
+                             <View className='flex-row'>
+                                <Image
+                                    source={require('../assets/qrcode.png')}
+                                    style={{ width: 20, height: 20 }}
+                                    marginTop = {3}
+
+                                />
+
+                                <Text style={{
+                                    fontSize: 16,
+                                    marginLeft:2,
+                                    marginRight:7,
+
+
+
+
+                                }} className='mt-1'>QR Scanner</Text>
+
+                            </View>
+
+                        </View>
+                    </View>
+
+                    {/* Check Availability Button */}
+                    <TouchableOpacity style={styles.button} className='mb-3'>
+                        <Text style={styles.buttonText} >Check Availability</Text>
+                    </TouchableOpacity>
+
+                    {/* Reserve and Book Buttons */}
+                    <View style={styles.buttonContainer}>
+                        <TouchableOpacity style={styles.reserveButton}>
+                            <Text style={styles.buttonText}>Reserve</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity style={styles.bookButton}>
+                            <Text style={styles.buttonText}>Book</Text>
+                        </TouchableOpacity>
+                    </View>
+
+
+
+                </View>
+
+            </ScrollView>
+
+            <CustomBottom />
+
+        </View>
 
 
 
@@ -218,7 +300,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     facilities: {
-        fontSize: 16,
+        fontSize: 18,
         color: 'gray',
     },
     button: {
