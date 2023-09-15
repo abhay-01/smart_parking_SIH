@@ -35,11 +35,14 @@ export default function PaymentScreen() {
         <View style={{ flex: 1 }}>
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.headerInfo}>
-                    <Text styles = {{
+                    <Text style = {{
                         fontSize: 24,
                         fontWeight: 'bold',
                     }}>Parking near Stellar IT</Text>
-                    <Text>
+                    <Text className = 'text-neutral-400 mt-2' style = {{
+                      fontSize: 17,
+
+                    }}>
                         Lorem Ipsum is simply dummy text of the printing and typesetting
                         industry.
                     </Text>
