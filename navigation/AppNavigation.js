@@ -16,6 +16,7 @@ import BottomTab from './BottomTab';
 import EVspots from '../screens/EVspots';
 import ParkingBooking from '../screens/ParkingBooking';
 import SelectedSpot from '../screens/SelectedSpot';
+import PaymentScreen from '../screens/PaymentScreen';
 
 const Stack = createStackNavigator();
 export default function AppNavigation({setOnboardingComplete}) {
@@ -160,6 +161,21 @@ export default function AppNavigation({setOnboardingComplete}) {
                 <Stack.Screen name="History" component={History} options={{
                     headerShown: true,
                     title: 'My Bookings',
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                    },
+                    headerBackground: () => (
+                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
+                    )
+
+
+                }} />
+
+<Stack.Screen name="PaymentScreen" component={PaymentScreen} options={{
+                    headerShown: true,
+                    title: 'Book your Slot',
                     headerTintColor: 'black',
                     headerTitleStyle: {
                         fontWeight: 'bold',
