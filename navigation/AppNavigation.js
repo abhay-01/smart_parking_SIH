@@ -15,6 +15,7 @@ import PaymentMethod from '../screens/PaymentMethod';
 import BottomTab from './BottomTab';
 import EVspots from '../screens/EVspots';
 import ParkingBooking from '../screens/ParkingBooking';
+import SelectedSpot from '../screens/SelectedSpot';
 
 const Stack = createStackNavigator();
 export default function AppNavigation({setOnboardingComplete}) {
@@ -56,20 +57,6 @@ export default function AppNavigation({setOnboardingComplete}) {
                     headerShown : false
                 }}/>
 
-                <Stack.Screen name="History" component={History} options={{
-                    headerShown: true,
-                    title: 'My Bookings',
-                    headerTintColor: 'black',
-                    headerTitleStyle: {
-                        fontWeight: 'bold',
-                        fontSize: 20,
-                    },
-                    headerBackground: () => (
-                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
-                    )
-
-
-                }} />
                 <Stack.Screen name="BookingDetailScreen" component={BookingDetailScreen} options={{
                     headerShown: true,
                     title: 'Booking Details',
@@ -142,7 +129,7 @@ export default function AppNavigation({setOnboardingComplete}) {
 
                 }} />
 
-<Stack.Screen name="EVspots" component={EVspots} options={{
+                <Stack.Screen name="EVspots" component={EVspots} options={{
                     headerShown: true,
                     title: 'EV Charging Spots',
                     headerTintColor: 'black',
@@ -156,7 +143,7 @@ export default function AppNavigation({setOnboardingComplete}) {
 
                 }} />
 
-<Stack.Screen name="ParkingBooking" component={ParkingBooking} options={{
+                <Stack.Screen name="ParkingBooking" component={ParkingBooking} options={{
                     headerShown: true,
                     title: 'Book you Slot',
                     headerTintColor: 'black',
@@ -167,6 +154,27 @@ export default function AppNavigation({setOnboardingComplete}) {
                     headerBackground: () => (
                         <View style={{ backgroundColor: 'orange', flex: 1 }} />
                     )
+
+                }} />
+
+                <Stack.Screen name="History" component={History} options={{
+                    headerShown: true,
+                    title: 'My Bookings',
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                    },
+                    headerBackground: () => (
+                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
+                    )
+
+
+                }} />
+
+<Stack.Screen name="SelectedSpot" component={SelectedSpot} options={{
+                    headerShown: false,
+                    
 
                 }} />
 
