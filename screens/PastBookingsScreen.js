@@ -13,6 +13,9 @@ export default function PastBookingsScreen() {
       date: '2023-09-10',
       fees: '$7',
       timeSlot: '01:30 PM - 03:30 PM',
+      bookingId: '1234567890',
+      paymentMethod:'Credit Card',
+      transactionId:'#GD6990'
     },
     {
       id: 2,
@@ -20,6 +23,10 @@ export default function PastBookingsScreen() {
       date: '2023-09-21',
       fees: '$9',
       timeSlot: '09:30 AM - 11:30 AM',
+      bookingId: '1234567890',
+      paymentMethod:'FastTag',
+      transactionId:'#GD6990'
+
     },
     {
       id: 3,
@@ -27,6 +34,12 @@ export default function PastBookingsScreen() {
       date: '2023-09-22',
       fees: '$11',
       timeSlot: '01:00 PM - 03:00 PM',
+      bookingId: '1234567890',
+      paymentMethod:'Credit Card',
+
+      transactionId:'#GD6990'
+
+
     },
     {
       id: 4,
@@ -34,6 +47,11 @@ export default function PastBookingsScreen() {
       date: '2023-09-21',
       fees: '$9',
       timeSlot: '09:30 AM - 11:30 AM',
+      bookingId: '1234567890',
+      paymentMethod:'FastTag',
+      transactionId:'#GD6990'
+
+
     },
     {
       id: 5,
@@ -41,12 +59,18 @@ export default function PastBookingsScreen() {
       date: '2023-09-22',
       fees: '$11',
       timeSlot: '01:00 PM - 03:00 PM',
+      bookingId: '1234567890',
+      paymentMethod:'Credit Card',
+      transactionId:'#GD6990'
+ 
+
     },
     // Add more past bookings
   ];
 
   return (
-    <ScrollView style={styles.container}     showsVerticalScrollIndicator={false}
+    <ScrollView style={styles.container}    
+     showsVerticalScrollIndicator={false}
     >
       {pastBookings.map((booking) => (
         <View key={booking.id} style={styles.bookingCard}>
