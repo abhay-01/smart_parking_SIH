@@ -17,6 +17,7 @@ import EVspots from '../screens/EVspots';
 import ParkingBooking from '../screens/ParkingBooking';
 import SelectedSpot from '../screens/SelectedSpot';
 import PaymentScreen from '../screens/PaymentScreen';
+import AuctionScreen from '../screens/AuctionScreen';
 
 const Stack = createStackNavigator();
 export default function AppNavigation({setOnboardingComplete}) {
@@ -194,8 +195,23 @@ export default function AppNavigation({setOnboardingComplete}) {
 
                 }} />
 
+<Stack.Screen name="AuctionScreen" component={AuctionScreen} options={{
+                    headerShown: true,
+                    title: 'Place your Bid',
+                    headerTintColor: 'black',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        fontSize: 20,
+                    },
+                    headerBackground: () => (
+                        <View style={{ backgroundColor: 'orange', flex: 1 }} />
+                    )
+
+
+                }} />
                
             </Stack.Navigator>
+
                
             
             {/* <BottomTab/> */}

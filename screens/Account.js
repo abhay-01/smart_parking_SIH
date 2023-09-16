@@ -117,10 +117,10 @@ const navigation = useNavigation();
       />
 
 
-        <TouchableRipple onPress={() => { }}>
+        <TouchableRipple onPress={() => navigation.navigate('AuctionScreen')}>
           <View style={styles.menuItem}>
             <Icon name="sale" color='#F79802' size={25} />
-            <Text style={styles.menuItemText}>Promo Code</Text>
+            <Text style={styles.menuItemText}>Auctions</Text>
           </View>
         </TouchableRipple>
         <TouchableRipple onPress={() => setAboutDialogVisible(true)}>
