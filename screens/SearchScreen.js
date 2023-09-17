@@ -5,7 +5,7 @@ import { ArrowLeftIcon } from 'react-native-heroicons/solid'
 import { Icon } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
 
-export default function ParkingBooking() {
+export default function SearchScreen() {
   const [textInputValue, setTextInputValue] = useState('');
   const navigation = useNavigation();
 
@@ -42,16 +42,7 @@ export default function ParkingBooking() {
             style={styles.icon}
             onPress={() => setTextInputValue('')} // Clear the input value
           />
-        
-
-          
         </View>
-        <View className = 'ml-8 mt-4'>
-        <TouchableOpacity onPress={()=> navigation.navigate('ParkingFilter')}>
-            <Text className = 'ml-18 text-neutral-200 font-bold'>Apply Filters</Text>
-          </TouchableOpacity>
-          </View>
-     
         <View style={styles.inputContainer2}>
           <Icon
             name="my-location"

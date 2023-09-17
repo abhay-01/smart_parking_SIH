@@ -16,9 +16,9 @@ export default function HomeScreen() {
             <StatusBar backgroundColor="orange" />
 
             <ImageBackground
-                source={require('../assets/parking.png')} // Replace with your background image
+                source={require('../assets/parking.png')}
                 style={styles.backgroundImage}
-                blurRadius={10} // Adjust the blur as needed
+                blurRadius={10} 
             >
                 <View style={styles.contentContainer}>
                     <Text style={styles.heading} className = 'mt-5'>Find a Parking Spot</Text>

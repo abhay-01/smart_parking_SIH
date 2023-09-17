@@ -18,43 +18,21 @@ import ParkingBooking from '../screens/ParkingBooking';
 import SelectedSpot from '../screens/SelectedSpot';
 import PaymentScreen from '../screens/PaymentScreen';
 import AuctionScreen from '../screens/AuctionScreen';
+import WelcomeScreen from '../screens/WelcomeScreen';
+import LoginScreen from '../screens/LoginScreen';
+import SignUpScreen from '../screens/SignUpScreen';
+import useAuth from '../hooks/useAuth';
+
+
 
 const Stack = createStackNavigator();
 export default function AppNavigation({setOnboardingComplete}) {
+    const {user} = useAuth();
+    if(user){
+        return(
+            <NavigationContainer>
+                <Stack.Navigator initialRouteName='HomeScreen'>
 
-    // const[showOnboard, setOnboard] = useState(null);
-
-    // useEffect(() => {
-
-    //     checkSignUp();
-    // }, []);
-
-    // const checkSignUp = async () => {
-    //     const value = await getData('signedup');
-    //     if(value === 1){
-    //         //hide onboarding screen
-    //         showOnboard(false);
-    //     }else{
-
-    //         //show onboarding screen
-    //         showOnboard(true);
-    //     }
-    // }
-
-    // if(showOnboard == null){
-    //     return null;
-    // }
-    
-
-    // if(showOnboard){
-    return (
-
-        <NavigationContainer>
-           
-                    <Stack.Navigator initialRouteName='Onboarding'>
-                <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{
-                    headerShown: false
-                }} />
                 <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
                     headerShown : false
                 }}/>
@@ -146,8 +124,8 @@ export default function AppNavigation({setOnboardingComplete}) {
                 }} />
 
                 <Stack.Screen name="ParkingBooking" component={ParkingBooking} options={{
-                    headerShown: true,
-                    title: 'Book you Slot',
+                    headerShown: false,
+                    title: 'Find Your Spot',
                     headerTintColor: 'black',
                     headerTitleStyle: {
                         fontWeight: 'bold',
@@ -209,14 +187,53 @@ export default function AppNavigation({setOnboardingComplete}) {
 
 
                 }} />
-               
-            </Stack.Navigator>
+                    </Stack.Navigator>
 
-               
-            
-            {/* <BottomTab/> */}
-        </NavigationContainer>
-    )
+                </NavigationContainer>
+
+        )
+    }else{
+        return(
+            <NavigationContainer>
+                <Stack.Navigator initialRouteName='Onboarding'>
+                <Stack.Screen name="Onboarding" component={OnboardingScreen} options={{
+                    headerShown: false
+                }} />
+                    <Stack.Screen name="WelcomeScreen" options={{headerShown: false}} component={WelcomeScreen} />
+                    <Stack.Screen name="LoginScreen" options={{headerShown: false}} component={LoginScreen} />
+                    <Stack.Screen name="SignUpScreen" options={{headerShown: false}} component={SignUpScreen} />
+                </Stack.Navigator>
+            </NavigationContainer>
+        )
+
+    }
+
+    // const[showOnboard, setOnboard] = useState(null);
+
+    // useEffect(() => {
+
+    //     checkSignUp();
+    // }, []);
+
+    // const checkSignUp = async () => {
+    //     const value = await getData('signedup');
+    //     if(value === 1){
+    //         //hide onboarding screen
+    //         showOnboard(false);
+    //     }else{
+
+    //         //show onboarding screen
+    //         showOnboard(true);
+    //     }
+    // }
+
+    // if(showOnboard == null){
+    //     return null;
+    // }
+    
+
+    // if(showOnboard){
+  
     // }else{
     //     <NavigationContainer>
     //     <Stack.Navigator initialRouteName='HomeScreen'>

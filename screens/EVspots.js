@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, Image,ProgressBarAndroid } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ActivityIndicator, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import CustomBottom from '../components/CustomBottom';
 
@@ -37,13 +37,7 @@ export default function EVspots() {
           <View style={styles.loadingBox}>
             <ActivityIndicator size="large" color="orange" />
             <Text style={styles.loadingText}>Loading...</Text>
-            <ProgressBarAndroid
-              styleAttr="Horizontal"
-              indeterminate={false}
-              progress={1}
-              color="orange"
-              style={styles.progressBar}
-            />
+            
           </View>
         </View>
       );

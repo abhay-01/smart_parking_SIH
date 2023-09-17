@@ -9,6 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 
+
 const { width, height } = Dimensions.get('window');
 
 export default function OnboardingScreen() {
@@ -17,10 +18,10 @@ export default function OnboardingScreen() {
     const[onboardingComplete, setOnboardingComplete] = useState(false); // [1
     const handleDone = () => {
 
-        onboardingComplete ? navigation.navigate('HomeScreen') : 
-        setOnboardingComplete(true);
+        // onboardingComplete ? navigation.navigate('HomeScreen') : 
+        // setOnboardingComplete(true);
 
-        navigation.navigate('HomeScreen');
+        navigation.navigate('WelcomeScreen');
     }
 
     const doneButton = () => {
