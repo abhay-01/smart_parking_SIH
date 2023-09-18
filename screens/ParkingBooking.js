@@ -76,13 +76,14 @@ export default function ParkingBooking() {
           <TouchableOpacity
             onPress={() => navigation.navigate("ParkingFilter")}
           >
-            {/* <Text className = 'ml-18 text-neutral-200 font-bold'>Apply Filters</Text> */}
-            <Button
-              onPress={getJamFactor}
-              title="Find Parking"
-              className="ml-18 text-neutral-200 font-bold"
-            />
+            <Text className='ml-18 text-neutral-200 font-bold'>Apply Filters</Text>
           </TouchableOpacity>
+
+          <Button
+            onPress={getJamFactor}
+            title="Find Parking"
+            className="ml-18 text-neutral-200 font-bold"
+          />
         </View>
 
         <View style={styles.inputContainer2}>
@@ -94,7 +95,7 @@ export default function ParkingBooking() {
             style={styles.icon2}
           />
           {parkLoc ? <Text style={styles.input2}>Parking space found</Text> : null}
-         
+
         </View>
         <View style={styles.inputContainer2}>
           <Icon
@@ -105,7 +106,7 @@ export default function ParkingBooking() {
             style={styles.icon2}
           />
           {parkLoc ? <Text style={styles.input2}>{parkLoc.park_addr}</Text> : null}
-          
+
 
         </View>
         <View style={styles.inputContainer2}>
@@ -117,7 +118,7 @@ export default function ParkingBooking() {
             style={styles.icon2}
           />
           {parkLoc ? <Text style={styles.input2}>Jam Status - Low: {parkLoc.jamFactor}</Text> : null}
-          
+
 
         </View>
         <View style={styles.inputContainer2}>
@@ -140,9 +141,11 @@ export default function ParkingBooking() {
               type="material"
               size={30}
             />
-            <Text style={{ marginLeft: 10, marginTop: 5, fontSize: 16 }}>
-              Indra Gandhi International Airport
-            </Text>
+            <TouchableOpacity onPress={() => navigation.navigate('SelectedSpot')}>
+              <Text style={{ marginLeft: 10, marginTop: 5, fontSize: 16 }}>
+                Parking Near Stellar IT
+              </Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.horizontalLine} />
           <View style={styles.contDeatils}>
@@ -152,9 +155,13 @@ export default function ParkingBooking() {
               size={30}
               style={{ opacity: 0.5 }}
             />
+
+<TouchableOpacity onPress={() => navigation.navigate('SelectedSpot')}>
+
             <Text style={{ marginLeft: 10, marginTop: 5, fontSize: 16 }}>
-              Indra Gandhi International Airport
+              Parking Lot F
             </Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.horizontalLine} />
           <View style={styles.contDeatils}>
@@ -164,9 +171,14 @@ export default function ParkingBooking() {
               size={30}
               style={{ opacity: 0.5 }}
             />
+
+<TouchableOpacity onPress={() => navigation.navigate('SelectedSpot')}>
+
             <Text style={{ marginLeft: 10, marginTop: 5, fontSize: 16 }}>
-              Indra Gandhi International Airport
+              Vats Parking Spaces
             </Text>
+
+            </TouchableOpacity>
           </View>
           <View style={styles.horizontalLine} />
         </View>
