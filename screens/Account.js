@@ -19,7 +19,6 @@ import CustomBottom from '../components/CustomBottom';
 
 
 
-
 const Account = () => {
   const [isAboutDialogVisible, setAboutDialogVisible] = useState(false);
   const [isVehiclesDialogVisible, setVehiclesDialogVisible] = useState(false);
