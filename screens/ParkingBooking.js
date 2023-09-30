@@ -178,7 +178,7 @@ export default function ParkingBooking() {
               Vats Parking Spaces
             </Text>
 
-            </TouchableOpacity>4
+            </TouchableOpacity>
           </View>
           <View style={styles.horizontalLine} />
         </View>
