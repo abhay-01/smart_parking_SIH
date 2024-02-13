@@ -15,7 +15,7 @@ const { width, height } = Dimensions.get('window');
 export default function OnboardingScreen() {
 
     const navigation = useNavigation();
-    const[onboardingComplete, setOnboardingComplete] = useState(false); // [1
+    const [onboardingComplete, setOnboardingComplete] = useState(false); // [1
     const handleDone = () => {
 
         // onboardingComplete ? navigation.navigate('HomeScreen') : 
