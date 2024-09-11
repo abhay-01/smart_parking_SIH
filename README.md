@@ -1,5 +1,11 @@
 # Smart Parking App
 
+## SCREENSHOTS
+![1s](https://github.com/user-attachments/assets/eff7ea70-7e70-4cfd-b586-6579f6ea2ddd)
+![2s](https://github.com/user-attachments/assets/f5cf38b8-33b0-4dc4-96b6-b4eda991e60e)
+![3s](https://github.com/user-attachments/assets/6f6fadc4-fbf7-47a5-9d62-7ad68a6d845a)
+![4s](https://github.com/user-attachments/assets/a3a24f72-b18a-4f14-92bb-2018581329ec)
+
 Welcome to the Urban Parking App! This innovative application is designed to streamline urban parking experiences by providing real-time updates and seamless integration with existing infrastructure. Our focus is on enhancing the user experience by delivering efficient and user-friendly solutions to urban parking challenges.
 
 ## Key Features
